@@ -19,6 +19,8 @@
     --font-size-h2: 1.7rem;
 
     --glow-1: 0 0 10px #16adbb, 0 0 40px #16adbb, 0 0 80px #16adbb;
+
+    --gradient: linear-gradient(180deg, rgba(20,20,20,1) 36%, rgba(7,219,226,1) 100%);
 }
 
 
@@ -68,6 +70,21 @@ body {
     max-width: 450px;
 }
 
+.card h3, h2 {
+    color: var(--text-color-3)
+}
+
+.inline-title {
+    display: flex;
+    align-items: center;
+}
+
+.inline-title span {
+    color: var(--text-color-3);
+    font-size: var(--font-size-logo);
+    margin-right: 10px;
+}
+
 ::-webkit-scrollbar {
     width: 15px;
 }
@@ -95,11 +112,13 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.5s;
+    color: var(--text-color-3);
 }
 
 .button:hover {
     background: var(--text-color-3);
     box-shadow: var(--glow-1);
+    color: var(--text-color-1);
 }
 
 .button span {
@@ -120,6 +139,44 @@ body {
 }
 
 .button .button-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.footer-button {
+    background: transparent;
+    border: solid 2px var(--background-color-3);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: var(--background-color-3);
+}
+
+.footer-button:hover {
+    background: var(--background-color-3);
+    color: var(--text-color-1);
+}
+
+.footer-button span {
+    font-size: var(--font-size) !important;
+    line-height: 100%;
+}
+
+.footer-button:hover span {
+    color: var(--text-color-1);
+}
+
+.footer-button:hover a {
+    color: var(--text-color-1);
+}
+
+.footer-button a {
+    text-decoration: none;
+    color: var(--background-color-3);
+}
+
+.footer-button .footer-button-content {
     height: 100%;
     display: flex;
     align-items: center;
@@ -149,7 +206,7 @@ body {
 }
 
 .ipt-search .search::placeholder {
-    color: var(--text-color-3); /* Cor desejada para o placeholder quando focado */
+    color: var(--text-color-3);
 }
 
 .ipt-search:focus-within {
@@ -183,6 +240,23 @@ body {
     color: var(--text-color-1);
 }
 
+.title {
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px var(--text-color-3);
+    max-width: 0 auto;
+}
+
+.title span {
+    color: var(--text-color-3);
+    font-size: var(--font-size-logo);
+}
+
+.title h2 {
+    color: var(--text-color-3);
+    font-size: var(--font-size-h2);
+    margin-left: 0.7rem;
+}
 
 /* ~~~ Header ~~~ */
 
@@ -328,19 +402,8 @@ ul li button a {
     box-sizing: border-box;
 }
 
-.about .card {
-    border: solid 1px var(--text-color-1);
-}
-
-.about .title {
-    display: flex;
-    align-items: center;
-    border-bottom: solid 1px var(--text-color-3);
-    max-width: 0 auto;
-}
-
 .about span {
-    color: var(--text-color-3);   
+    color: var(--text-color-3);
     font-size: var(--font-size-logo);
 }
 
@@ -365,6 +428,115 @@ ul li button a {
     margin: 0 auto;
     padding: 15px;
 }
+
+
+/* ~~~ Products ~~~ */
+
+.products .p-row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.products .card {
+    margin-top: 14px;
+}
+
+.products .card .content {
+    max-width: 300px;
+}
+
+.products .card img {
+    width: 200px;
+    height: 200px;
+}
+
+.products .card button {
+    padding: 5px 0px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.products .card {
+    margin: 15px;
+}
+
+
+/* ~~~ Clients ~~~ */
+
+.clients {
+    padding: 20px;
+    background: var(--gradient);
+    width: 100%;
+    min-height: 400px;
+    box-sizing: border-box;
+}
+
+.clients .container {
+    height: 100%;
+}
+
+.satisfied {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 30px 0px;
+    margin-top: 10px;
+}
+
+.satisfied .card {
+    box-shadow: var(--glow-1);
+}
+
+.satisfied .content {
+    box-sizing: border-box;
+    max-width: 300px;
+}
+
+.satisfied .card h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.satisfied .card button {
+    width: 100%;
+    padding: 5px 0px;
+}
+
+/* ~~~ Footer ~~~ */
+
+footer {
+    padding: 20px 0px;
+    background-color: var(--text-color-4);
+}
+
+footer ul {
+    display: block;
+    width: 100%;
+}
+
+footer ul li {
+    width: 100%;
+}
+
+footer ul li button {
+    min-width: 200px;
+}
+
+footer h3 {
+    color: var(--background-color-3);
+    font-size: var(--font-size-logo);
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+}
+
+
 
 @media screen and (max-width: 1088px) {
     .nav-tabs {
